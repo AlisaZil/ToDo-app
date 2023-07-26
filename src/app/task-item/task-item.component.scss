@@ -1,0 +1,85 @@
+.task-container{
+
+    width: 517px;
+    height: 83px;
+    border-radius: 10px;
+
+    background-color:white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    cursor: pointer;
+
+
+    .remove-task-container{
+        height: 1.5rem;
+        
+        
+        .remove-icon{
+            fill: #B80000;  
+            height: 100%;
+            margin: 0;
+            visibility: hidden;
+        }
+    }
+    .remove-task-container:hover{
+        .remove-icon{
+            visibility: visible;
+            transition: 0.3s;
+        }
+    }
+
+    .description{
+        font-size: 20px;
+        width: 401px;
+        user-select: none;
+        transition: 0.2s;
+        margin: 0;
+    }
+
+    //radio button
+    
+    .radio{
+        appearance: none;
+
+        background-color: transparent;
+        margin: 0;
+        width: 1.5625rem;
+        height: 1.5625rem;
+
+        border: 0.15em solid rgba(238, 240, 245, 1);
+        border-radius: 50%;
+
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .radio:checked {
+        border-color: rgba(80, 227, 164, 1);
+    }
+
+    .radio::before{
+        content: "";
+        width: 0.9rem;
+        height: 0.9rem;
+        border-radius: 50%;
+        transform: scale(0);
+
+        box-shadow: inset 1em 1em rgba(80, 227, 164, 1);
+    }
+
+    .radio:checked::before{
+        transform: scale(1);
+        transition: 0.3s;
+    }
+}
+
+.task-container:hover{
+    background-color: rgba(80, 227, 164, 0.1);
+    transition: 0.3s;
+}
