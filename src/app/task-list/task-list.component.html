@@ -53,6 +53,7 @@ class="list-container">
 
         <input
         [(ngModel)]="taskInput"
+        (keyup.enter)="addTask()"
         placeholder="write a new task"
         class="task-input" 
         type="text">
