@@ -20,11 +20,15 @@
     <div class="line"></div>
 
     <div class="task-list">
-        <app-task-item
-        *ngFor="let task of taskList"
-        [description]="task.description"
-        (sendIsChecked)="task.isChecked=($event)"
-        ></app-task-item>
+        <ng-container
+        *ngFor="let task of taskList">
+            <app-task-item
+            *ngIf="!task.hide"
+            [description]="task.description"
+            (sendIsChecked)="task.isChecked=($event)"
+            (sendIsRemoved)="task.hide=($event)"
+            ></app-task-item>
+        </ng-container>
     </div>
 
     <div class="add-task-container">
