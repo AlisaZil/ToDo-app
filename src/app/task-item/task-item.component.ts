@@ -5,18 +5,14 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './task-item.component.html',
   styleUrls: ['./task-item.component.scss']
 })
-export class TaskItemComponent implements OnInit {
+export class TaskItemComponent {
 
   @Input() description:string = 'this is a new task you have to complete!';
+
   @Output() sendIsRemoved = new EventEmitter<boolean>();
   @Output() sendIsChecked = new EventEmitter<boolean>();
 
   isChecked:boolean = false;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   sendRemoveEvent(){
     this.sendIsRemoved.emit(true);
