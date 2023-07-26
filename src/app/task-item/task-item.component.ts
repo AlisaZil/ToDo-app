@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TaskItemComponent implements OnInit {
 
   @Input() description:string = 'this is a new task you have to complete!';
+  isChecked:boolean = false;
 
   constructor() { }
 

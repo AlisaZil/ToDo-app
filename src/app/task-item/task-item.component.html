@@ -1,13 +1,20 @@
-<div class="task-container">
-
-    <div class="description-container">
-        <p class="description">{{description}}</p>
-    </div>
-
-    <input class="radio" type="radio">
+<div
+(click)="isChecked=!isChecked"
+class="task-container">
 
     <div class="remove-task">
         <p class="remove-icon"></p>
     </div>
+
+    <div class="description-container">
+        <p 
+        [ngStyle]="{'color': isChecked? 'rgba(173, 173, 173, 1)':'black'}"
+        class="description">{{description}}</p>
+    </div>
+
+    <input
+    [checked]="isChecked" 
+    class="radio" 
+    type="radio">
 
 </div>

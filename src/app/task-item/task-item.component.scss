@@ -6,11 +6,19 @@
 
     background-color:white;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    cursor: pointer;
+
     .description-container{
 
         .description{
             font-size: 20px;
             width: 401px;
+            user-select: none;
+            transition: 0.2s;
         }
     }
 
@@ -18,7 +26,7 @@
     
     .radio{
         appearance: none;
-        
+
         background-color: transparent;
         margin: 0;
         width: 1.5625rem;
@@ -30,17 +38,17 @@
         cursor: pointer;
         display: grid;
         place-content: center;
+        transition: 0.3s;
     }
 
     .radio:checked {
         border-color: rgba(80, 227, 164, 1);
-        transition: 0.3s;
     }
 
     .radio::before{
         content: "";
-        width: 1.01rem;
-        height: 1.01rem;
+        width: 0.9rem;
+        height: 0.9rem;
         border-radius: 50%;
         transform: scale(0);
 
@@ -49,6 +57,11 @@
 
     .radio:checked::before{
         transform: scale(1);
-        transition: 0.2s;
+        transition: 0.3s;
     }
+}
+
+.task-container:hover{
+    background-color: rgba(80, 227, 164, 0.1);
+    transition: 0.3s;
 }
