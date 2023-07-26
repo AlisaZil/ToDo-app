@@ -1,1 +1,72 @@
-<p>task-list works!</p>
+<div
+[ngStyle]="{'height': openAddTask? '48.8125rem': '40.8125rem'}" 
+class="list-container">
+
+    <div class="header">
+
+        <div class="date">
+
+            <p class="day">{{getCurrDateByType('day')}}</p>
+
+            <div class="rest-date">
+                <p class="month">{{getCurrDateByType('month')}}</p>
+                <p class="year">{{getCurrDateByType('year')}}</p>
+            </div>
+
+        </div>
+
+        <p class="day-of-week">{{getCurrDateByType('dayOfWeek')}}</p>
+
+    </div>
+
+    <div class="line"></div>
+
+    <div class="task-list">
+        <ng-container
+        *ngFor="let task of taskList">
+            <app-task-item
+            class="task"
+            *ngIf="!task.hide"
+            [description]="task.description"
+            (sendIsChecked)="task.isChecked=($event)"
+            (sendIsRemoved)="task.hide=($event)"
+            ></app-task-item>
+        </ng-container>
+    </div>
+
+    
+    <div
+    *ngIf="!openAddTask"
+    (click)="openAddTask = true" 
+    class="add-task-button">
+        <p>+</p>
+    </div>
+    
+    <div
+    *ngIf="openAddTask"
+    class="line">
+    </div>
+
+    <div
+    *ngIf="openAddTask" 
+    class="add-task-container">
+
+        <input
+        [(ngModel)]="taskInput"
+        placeholder="write a new task"
+        class="task-input" 
+        type="text">
+
+        <div class="button-container">
+
+            <button 
+            class="add-task"
+            (click)="addTask()">Add</button>
+            <button
+            (click)="openAddTask = false; taskInput = ''" 
+            class="cancel-task">Cancel</button>
+
+        </div>
+
+    </div>
+</div>

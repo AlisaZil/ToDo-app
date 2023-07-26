@@ -1,0 +1,235 @@
+
+$addTaskColor:#50E3A4;
+$canselTaskColor: #F17171;
+
+.list-container{
+
+    width: 35.5rem;
+    height: 40.8125rem;
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+
+    user-select: none;
+
+    animation-duration: 0.4s;
+    animation-name: fadeIn;
+
+    .header{
+        height: 7.66rem;
+        width: 100%;
+
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .date{
+            display: flex;
+            align-items: center;
+            margin-left: 3.7rem;
+
+            .day{
+                font-size: 4rem;
+                margin-right: 0.4rem;
+            }
+            .month{
+                font-family: poppins-bold;
+                font-size: 1.25rem;
+            }
+            .year{
+                font-size: 1.25rem;
+            }
+
+            .rest-date{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+    
+        }
+        
+        p{
+            margin: 0;
+        }
+
+        .day-of-week{
+            font-size: 2rem;
+            margin-right: 3.7rem;
+        }
+
+    }
+
+    .task-list{
+        margin-top: 1.5rem;
+        height: 29.345rem;
+        
+        animation-duration: 0.4s;
+        animation-name: fadeIn;
+        overflow: auto;
+
+        .task{
+            animation-duration: 0.4s;
+            animation-name: fadeIn;
+        }
+    }
+
+    .task-list::-webkit-scrollbar {
+        display: none;
+    }
+      
+
+    .line{
+        width: 100%;
+        height: 1px;
+        background-color: rgba(237, 237, 237, 1);
+    }
+
+    .add-task-button{
+
+        width: 5.375rem;
+        height: 5.375rem;
+        background-color: rgba(80, 227, 164, 1);
+        border-radius: 50%;
+
+        margin-bottom: -2.5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        p{
+            margin: 0;
+            font-size: 3rem;
+            color: #00B568;
+            user-select: none;
+        }
+    }
+
+    .add-task-button:hover{
+        background-color: rgb(77, 224, 160);
+        transition: 0.2s;
+    }
+
+    .add-task-button:active{
+        background-color: rgb(75, 215, 154);
+        transition: 0.2s;
+    }
+
+    .add-task-container{
+        margin-top: 25px;
+        
+        width: 100%;
+        height: fit-content;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        animation-duration: 0.4s;
+        animation-name: fadeIn;
+
+        .task-input{
+
+            width: 32.3125rem;
+            height: 3.5625rem;
+
+            background-color: rgba(244, 244, 244, 1);
+
+            outline: none;
+            border: none;
+
+            border-radius: 0.625rem;
+            text-indent: 2rem;
+            font-family: poppins;
+            font-size: 1.25rem;
+
+        }
+        .task-input::placeholder {
+            font-family: poppins;
+            font-size: 1.25rem;
+        }
+
+
+        .button-container{
+
+            width: 40%;
+            height: fit-content;
+
+            margin-top: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            button{
+
+                width: 6.3125rem;
+                height: 3.0625rem;
+
+                border-radius: 10px;
+                outline: none;
+                border: none;
+
+                font-family: poppins;
+                font-size: 1.25rem;
+                cursor: pointer;
+                transition: 0.3s;
+
+            }
+
+            .add-task{
+                background-color: $addTaskColor;
+                color: #01673C;
+            }
+            .cancel-task{
+                background-color: $canselTaskColor;
+                color: rgba(103, 1, 1, 1);
+            }
+
+            .add-task:hover{
+                background-color: darken($color: $addTaskColor, $amount: 10);
+            }
+            .add-task:active{
+                background-color: darken($color: $addTaskColor, $amount: 20);
+            }
+
+            .cancel-task:hover{
+                background-color: darken($color: $canselTaskColor, $amount: 10);
+            }
+            .cancel-task:active{
+                background-color: darken($color: $canselTaskColor, $amount: 20);
+            }
+        }
+    }
+
+}
+
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+
