@@ -11,7 +11,44 @@
         .description{
             font-size: 20px;
             width: 401px;
-
         }
+    }
+
+    //radio button
+    
+    .radio{
+        appearance: none;
+        
+        background-color: transparent;
+        margin: 0;
+        width: 1.5625rem;
+        height: 1.5625rem;
+
+        border: 0.15em solid rgba(238, 240, 245, 1);
+        border-radius: 50%;
+
+        cursor: pointer;
+        display: grid;
+        place-content: center;
+    }
+
+    .radio:checked {
+        border-color: rgba(80, 227, 164, 1);
+        transition: 0.3s;
+    }
+
+    .radio::before{
+        content: "";
+        width: 1.01rem;
+        height: 1.01rem;
+        border-radius: 50%;
+        transform: scale(0);
+
+        box-shadow: inset 1em 1em rgba(80, 227, 164, 1);
+    }
+
+    .radio:checked::before{
+        transform: scale(1);
+        transition: 0.2s;
     }
 }
