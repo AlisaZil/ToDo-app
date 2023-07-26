@@ -12,14 +12,31 @@
     
     cursor: pointer;
 
-    .description-container{
 
-        .description{
-            font-size: 20px;
-            width: 401px;
-            user-select: none;
-            transition: 0.2s;
+    .remove-task-container{
+        height: 1.5rem;
+        
+        
+        .remove-icon{
+            fill: #B80000;  
+            height: 100%;
+            margin: 0;
+            visibility: hidden;
         }
+    }
+    .remove-task-container:hover{
+        .remove-icon{
+            visibility: visible;
+            transition: 0.3s;
+        }
+    }
+
+    .description{
+        font-size: 20px;
+        width: 401px;
+        user-select: none;
+        transition: 0.2s;
+        margin: 0;
     }
 
     //radio button
@@ -36,8 +53,9 @@
         border-radius: 50%;
 
         cursor: pointer;
-        display: grid;
-        place-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: 0.3s;
     }
 
