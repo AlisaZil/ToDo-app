@@ -1,7 +1,7 @@
 .list-container{
 
     width: 35.5rem;
-    height: 40.8125rem;
+    height: 48.8125rem;
 
     border-radius: 10px;
     background: #FFF;
@@ -90,6 +90,8 @@
         justify-content: center;
         cursor: pointer;
 
+        visibility: hidden;
+
         p{
             margin: 0;
             font-size: 3rem;
@@ -108,4 +110,29 @@
         transition: 0.2s;
     }
 
+    .add-task-container{
+        .task-input{
+
+            width: 32.3125rem;
+            height: 3.5625rem;
+
+            background-color: rgba(244, 244, 244, 1);
+
+            outline: none;
+            border: none;
+
+            border-radius: 0.625rem;
+            text-indent: 2rem;
+            font-family: poppins;
+            font-size: 1.25rem;
+
+        }
+        .task-input::placeholder {
+            font-family: poppins;
+            font-size: 1.25rem;
+        }
+    }
+
 }
+
+
