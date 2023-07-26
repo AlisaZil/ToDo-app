@@ -37,6 +37,7 @@ export class TaskListComponent implements OnInit {
     type === 'month'?
     currDate.toLocaleString('default', { month: 'long' }).toLocaleUpperCase():
     currDate.getFullYear();
+
   }
 
 }
