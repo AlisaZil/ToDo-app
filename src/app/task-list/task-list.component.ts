@@ -1,11 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+interface taskItem{
+  description:string,
+  isChecked:boolean
+}
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss']
 })
+
 export class TaskListComponent implements OnInit {
+
+  @Input() taskList:taskItem[] = [
+    {description:'Read to kill a  mockingbird', isChecked:false},
+    {description:'Clean my bathroom', isChecked:false},
+    {description:'Write an email to edu about Scss', isChecked:false},
+    {description:'Plan a banana themed birthday party for Dalia', isChecked:false},
+    {description:'Plan a Princesses themed birthday party for Clara', isChecked:false}
+  ]
 
   constructor() { }
 
