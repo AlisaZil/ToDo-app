@@ -1,3 +1,7 @@
+
+$addTaskColor:#50E3A4;
+$canselTaskColor: #F17171;
+
 .list-container{
 
     width: 35.5rem;
@@ -131,8 +135,54 @@
             font-family: poppins;
             font-size: 1.25rem;
         }
+
+
+        .button-container{
+            width: 100%;
+            height: fit-content;
+
+            button{
+
+                width: 6.3125rem;
+                height: 3.0625rem;
+
+                border-radius: 10px;
+                outline: none;
+                border: none;
+
+                font-family: poppins;
+                font-size: 1.25rem;
+                cursor: pointer;
+                transition: 0.3s;
+
+            }
+
+            .add-task{
+                background-color: $addTaskColor;
+                color: #01673C;
+            }
+            .cancel-task{
+                background-color: $canselTaskColor;
+                color: rgba(103, 1, 1, 1);
+            }
+
+            .add-task:hover{
+                background-color: darken($color: $addTaskColor, $amount: 10);
+            }
+            .add-task:active{
+                background-color: darken($color: $addTaskColor, $amount: 20);
+            }
+
+            .cancel-task:hover{
+                background-color: darken($color: $canselTaskColor, $amount: 10);
+            }
+            .cancel-task:active{
+                background-color: darken($color: $canselTaskColor, $amount: 20);
+            }
+        }
     }
 
 }
+
 
 
