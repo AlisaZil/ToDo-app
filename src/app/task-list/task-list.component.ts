@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 interface taskItem{
   description:string,
-  isChecked:boolean
+  isChecked:boolean,
+  hide:boolean
 }
 
 @Component({
@@ -14,11 +15,11 @@ interface taskItem{
 export class TaskListComponent implements OnInit {
 
   @Input() taskList:taskItem[] = [
-    {description:'Read to kill a  mockingbird', isChecked:false},
-    {description:'Clean my bathroom', isChecked:false},
-    {description:'Write an email to edu about Scss', isChecked:false},
-    {description:'Plan a banana themed birthday party for Dalia', isChecked:false},
-    {description:'Plan a Princesses themed birthday party for Clara', isChecked:false}
+    {description:'Read to kill a  mockingbird', isChecked:false, hide:false},
+    {description:'Clean my bathroom', isChecked:false, hide:false},
+    {description:'Write an email to edu about Scss', isChecked:false, hide:false},
+    {description:'Plan a banana themed birthday party for Dalia', isChecked:false, hide:false},
+    {description:'Plan a Princesses themed birthday party for Clara', isChecked:false, hide:false}
   ]
 
   constructor() { }
