@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-task-item',
@@ -16,6 +16,11 @@ export class TaskItemComponent {
 
   sendRemoveEvent(){
     this.sendIsRemoved.emit(true);
+  }
+
+  sendCheckdEvent(){
+    this.isChecked = !this.isChecked;
+    this.sendIsChecked.emit(this.isChecked);
   }
 
 }

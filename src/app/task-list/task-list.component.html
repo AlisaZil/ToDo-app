@@ -20,10 +20,10 @@
     <div class="line"></div>
 
     <div class="task-list">
-
         <app-task-item
         *ngFor="let task of taskList"
         [description]="task.description"
+        (sendIsChecked)="task.isChecked=($event)"
         ></app-task-item>
     </div>
 
