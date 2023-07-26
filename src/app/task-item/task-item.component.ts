@@ -8,7 +8,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class TaskItemComponent implements OnInit {
 
   @Input() description:string = 'this is a new task you have to complete!';
-  @Output() isRemoved = new EventEmitter<boolean>();
+  @Output() sendIsRemoved = new EventEmitter<boolean>();
+  @Output() sendIsChecked = new EventEmitter<boolean>();
+
   isChecked:boolean = false;
 
   constructor() { }
@@ -17,7 +19,7 @@ export class TaskItemComponent implements OnInit {
   }
 
   sendRemoveEvent(){
-    this.isRemoved.emit(true);
+    this.sendIsRemoved.emit(true);
   }
 
 }
