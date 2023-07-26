@@ -5,7 +5,7 @@ $canselTaskColor: #F17171;
 .list-container{
 
     width: 35.5rem;
-    height: 48.8125rem;
+    height: 40.8125rem;
 
     border-radius: 10px;
     background: #FFF;
@@ -19,6 +19,10 @@ $canselTaskColor: #F17171;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.2s;
+
+    animation-duration: 0.4s;
+    animation-name: fadeIn;
 
     .header{
         height: 7.66rem;
@@ -71,7 +75,7 @@ $canselTaskColor: #F17171;
     .task-list{
         margin-top: 1.5rem;
         height: 29.345rem;
-        overflow: auto;
+        // overflow: auto;
     }
 
     .line{
@@ -94,8 +98,6 @@ $canselTaskColor: #F17171;
         justify-content: center;
         cursor: pointer;
 
-        visibility: hidden;
-
         p{
             margin: 0;
             font-size: 3rem;
@@ -115,6 +117,19 @@ $canselTaskColor: #F17171;
     }
 
     .add-task-container{
+        margin-top: 25px;
+        
+        width: 100%;
+        height: fit-content;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        animation-duration: 0.4s;
+        animation-name: fadeIn;
+
         .task-input{
 
             width: 32.3125rem;
@@ -138,8 +153,15 @@ $canselTaskColor: #F17171;
 
 
         .button-container{
-            width: 100%;
+
+            width: 40%;
             height: fit-content;
+
+            margin-top: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
             button{
 
@@ -184,5 +206,15 @@ $canselTaskColor: #F17171;
 
 }
 
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
 
 

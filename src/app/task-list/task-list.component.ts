@@ -20,7 +20,9 @@ export class TaskListComponent implements OnInit {
     {description:'Write an email to edu about Scss', isChecked:false, hide:false},
     {description:'Plan a banana themed birthday party for Dalia', isChecked:false, hide:false},
     {description:'Plan a Princesses themed birthday party for Clara', isChecked:false, hide:false}
-  ]
+  ];
+
+  openAddTask:boolean = false;
 
   constructor() { }
 

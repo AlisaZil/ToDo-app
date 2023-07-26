@@ -1,4 +1,6 @@
-<div class="list-container">
+<div
+[ngStyle]="{'height': openAddTask? '48.8125rem': '40.8125rem'}" 
+class="list-container">
 
     <div class="header">
 
@@ -31,13 +33,22 @@
         </ng-container>
     </div>
 
-    <div class="line"></div>
-
-    <div class="add-task-button">
+    
+    <div
+    *ngIf="!openAddTask"
+    (click)="openAddTask = true" 
+    class="add-task-button">
         <p>+</p>
     </div>
+    
+    <div
+    *ngIf="openAddTask"
+    class="line">
+    </div>
 
-    <div class="add-task-container">
+    <div
+    *ngIf="openAddTask" 
+    class="add-task-container">
 
         <input
         placeholder="write a new task"
@@ -47,7 +58,9 @@
         <div class="button-container">
 
             <button class="add-task">Add</button>
-            <button class="cancel-task">Cancel</button>
+            <button
+            (click)="openAddTask = false" 
+            class="cancel-task">Cancel</button>
 
         </div>
 
