@@ -21,6 +21,8 @@ $canselTaskColor: #F17171;
     align-items: center;
     transition: 0.2s;
 
+    user-select: none;
+
     animation-duration: 0.4s;
     animation-name: fadeIn;
 
@@ -75,8 +77,21 @@ $canselTaskColor: #F17171;
     .task-list{
         margin-top: 1.5rem;
         height: 29.345rem;
-        // overflow: auto;
+        
+        animation-duration: 0.4s;
+        animation-name: fadeIn;
+        overflow: auto;
+
+        .task{
+            animation-duration: 0.4s;
+            animation-name: fadeIn;
+        }
     }
+
+    .task-list::-webkit-scrollbar {
+        display: none;
+    }
+      
 
     .line{
         width: 100%;

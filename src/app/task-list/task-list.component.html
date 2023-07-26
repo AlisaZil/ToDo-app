@@ -25,6 +25,7 @@ class="list-container">
         <ng-container
         *ngFor="let task of taskList">
             <app-task-item
+            class="task"
             *ngIf="!task.hide"
             [description]="task.description"
             (sendIsChecked)="task.isChecked=($event)"
@@ -51,15 +52,18 @@ class="list-container">
     class="add-task-container">
 
         <input
+        [(ngModel)]="taskInput"
         placeholder="write a new task"
         class="task-input" 
         type="text">
 
         <div class="button-container">
 
-            <button class="add-task">Add</button>
+            <button 
+            class="add-task"
+            (click)="addTask()">Add</button>
             <button
-            (click)="openAddTask = false" 
+            (click)="openAddTask = false; taskInput = ''" 
             class="cancel-task">Cancel</button>
 
         </div>

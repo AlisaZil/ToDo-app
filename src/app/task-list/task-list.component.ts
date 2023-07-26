@@ -23,6 +23,7 @@ export class TaskListComponent implements OnInit {
   ];
 
   openAddTask:boolean = false;
+  taskInput:string = '';
 
   constructor() { }
 
@@ -41,6 +42,12 @@ export class TaskListComponent implements OnInit {
     currDate.toLocaleString('default', { month: 'long' }).toLocaleUpperCase():
     currDate.getFullYear();
 
+  }
+
+  addTask(){
+    if(this.taskInput !== ''){
+      this.taskList.push({description:this.taskInput, isChecked:false, hide:false});
+    }
   }
 
 }
