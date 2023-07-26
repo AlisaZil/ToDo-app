@@ -12,4 +12,17 @@ export class TaskListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getCurrDateByType(type:'dayOfWeek'|'day'|'month'|'year'){
+
+    let currDate = new Date();
+    
+    return type === 'dayOfWeek'?
+    currDate.toLocaleDateString('locale', {weekday: 'long'}):
+    type === 'day'?
+    currDate.getDay():
+    type === 'month'?
+    currDate.toLocaleString('default', { month: 'long' }):
+    currDate.getFullYear();
+  }
+
 }
