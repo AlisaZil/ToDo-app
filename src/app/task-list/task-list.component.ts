@@ -21,7 +21,7 @@ export class TaskListComponent implements OnInit {
     type === 'day'?
     currDate.getDay():
     type === 'month'?
-    currDate.toLocaleString('default', { month: 'long' }):
+    currDate.toLocaleString('default', { month: 'long' }).toLocaleUpperCase():
     currDate.getFullYear();
   }
 
